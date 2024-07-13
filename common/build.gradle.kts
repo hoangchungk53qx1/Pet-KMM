@@ -2,7 +2,7 @@ plugins {
   alias(libs.plugins.kotlinMultiplatform)
   alias(libs.plugins.kotlinCocoapods)
   alias(libs.plugins.androidLibrary)
-  id("co.touchlab.skie") version "0.8.2"
+  alias(libs.plugins.compose.compiler)
 }
 
 kotlin {
