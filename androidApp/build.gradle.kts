@@ -39,13 +39,16 @@ android {
   }
 
   compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+
+    isCoreLibraryDesugaringEnabled = true
+
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
   }
 
   kotlinOptions {
     options.jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
-    freeCompilerArgs = freeCompilerArgs + buildComposeMetricsParameters() + listOf(
+    freeCompilerArgs = freeCompilerArgs + listOf(
       "-opt-in=kotlin.RequiresOptIn",
       // Enable experimental coroutines APIs, including Flow
       "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
@@ -67,30 +70,3 @@ dependencies {
   debugImplementation(libs.compose.ui.tooling)
 }
 
-fun Project.buildComposeMetricsParameters(): List<String> {
-  val metricParameters = mutableListOf<String>()
-  val enableMetricsProvider = project.providers.gradleProperty("enableComposeCompilerMetrics")
-  val enableMetrics = (enableMetricsProvider.orNull == "true")
-  if (enableMetrics) {
-    val composeMetrics = layout.buildDirectory.dir("compose-metrics")
-
-//    val metricsFolder = File(project.buildDir, "compose-metrics")
-    metricParameters.add("-P")
-    metricParameters.add(
-      "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=" + composeMetrics.get().asFile.absolutePath,
-    )
-  }
-
-  val enableReportsProvider = project.providers.gradleProperty("enableComposeCompilerReports")
-  val enableReports = (enableReportsProvider.orNull == "true")
-  if (enableReports) {
-    val composeReports = layout.buildDirectory.dir("compose-reports")
-
-//    val reportsFolder = File(project.buildDir, "compose-reports")
-    metricParameters.add("-P")
-    metricParameters.add(
-      "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=" + composeReports.get().asFile.absolutePath,
-    )
-  }
-  return metricParameters.toList()
-}

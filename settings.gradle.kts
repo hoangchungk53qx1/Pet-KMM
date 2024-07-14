@@ -1,6 +1,6 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-arrayOf("gradle.properties", "gradle").forEach(::copyToBuildSrc)
+//arrayOf("gradle.properties", "gradle").forEach(::copyToBuildSrc)
 
 pluginManagement {
     repositories {
