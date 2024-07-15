@@ -63,10 +63,34 @@ android {
 dependencies {
   implementation(projects.common)
   coreLibraryDesugaring(libs.jdkDesugar)
-  implementation(libs.compose.ui)
-  implementation(libs.compose.ui.tooling.preview)
-  implementation(libs.compose.material3)
   implementation(libs.androidx.activity.compose)
-  debugImplementation(libs.compose.ui.tooling)
+
+  implementation(platform(libs.androidx.compose.bom))
+  implementation(libs.androidx.compose.foundation)
+  implementation(libs.androidx.compose.foundation.layout)
+  implementation(libs.androidx.compose.material)
+  implementation(libs.androidx.compose.runtime)
+  implementation(libs.androidx.compose.ui)
+  implementation(libs.androidx.compose.ui.tooling)
+
+  implementation(libs.androidx.compose.material3)
+  implementation(libs.androidx.compose.material3.windowSizeClass)
+
+  implementation(libs.androidx.navigation.compose)
+  implementation(libs.androidx.lifecycle.compose)
+  implementation(libs.coilCompose)
+
+  implementation(libs.accompanist.placeholder)
+
+  implementation(libs.koin.core)
+  implementation(libs.koin.android)
+  implementation(libs.koin.androidx.compose)
+
+  testImplementation(libs.junit)
+  testImplementation(libs.koin.test)
+  androidTestImplementation(platform(libs.androidx.compose.bom))
+  androidTestImplementation(libs.androidx.compose.ui.test)
+  androidTestImplementation(libs.androidx.compose.ui.test.junit)
+  debugImplementation(libs.androidx.compose.ui.test.manifest)
 }
 
