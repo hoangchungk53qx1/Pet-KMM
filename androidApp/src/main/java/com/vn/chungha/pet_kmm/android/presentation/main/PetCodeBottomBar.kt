@@ -1,9 +1,9 @@
 package com.vn.chungha.pet_kmm.android.presentation.main
 
 import androidx.compose.animation.animateColorAsState
-import androidx.compose.foundation.Image
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material3.Icon
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -23,9 +23,9 @@ fun PetBottomBar(
   modifier: Modifier = Modifier,
   color: Color = PetCodeTheme.color.background,
 ) {
-  BottomNavigation(
+  NavigationBar(
     modifier = modifier,
-    backgroundColor = color,
+    containerColor = color,
   ) {
     destinations.forEach { destination ->
       val selected = destination == currentDestination
@@ -42,18 +42,18 @@ fun PetBottomBar(
         label = text,
       )
 
-      BottomNavigationItem(
+      NavigationBarItem(
         icon = {
-          Image(
+          Icon(
             painter = icon,
             contentDescription = text,
+            tint = tint,
           )
         },
         label = {
           Text(
             text = text,
             color = tint,
-            maxLines = 1,
             style = PetCodeTheme.typo.innerBoldSize12Line16,
           )
         },

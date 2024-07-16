@@ -7,14 +7,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.view.WindowCompat
 import com.vn.chungha.pet_kmm.android.presentation.main.PetCodeApp
 
 class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-
+    WindowCompat.setDecorFitsSystemWindows(window, false)
     enableEdgeToEdge()
-
     setContent {
       PetCodeApp()
     }
