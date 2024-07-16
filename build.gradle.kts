@@ -42,6 +42,36 @@ subprojects {
       )
     }
   }
+
+  apply<com.diffplug.gradle.spotless.SpotlessPlugin>()
+
+  fun isNonStable(version: String): Boolean {
+    val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.uppercase().contains(it) }
+    val regex = "^[0-9,.v-]+(-r)?$".toRegex()
+    val isStable = stableKeyword || regex.matches(version)
+    return !isStable
+  }
+
+  fun isStable(version: String) = !isNonStable(version)
+
+  afterEvaluate {
+    tasks.withType<Test> {
+      testLogging {
+        showExceptions = true
+        showCauses = true
+        showStackTraces = true
+        showStandardStreams = true
+        events = EnumSet.of(
+          TestLogEvent.PASSED,
+          TestLogEvent.FAILED,
+          TestLogEvent.SKIPPED,
+          TestLogEvent.STANDARD_OUT,
+          TestLogEvent.STANDARD_ERROR,
+        )
+        exceptionFormat = TestExceptionFormat.FULL
+      }
+    }
+  }
 }
 
 allprojects {
