@@ -37,6 +37,12 @@ accompanist = "0.32.0"
 coilCompose = "2.6.0"
 image-loader = "1.7.8"
 
+detekt = "1.23.5"
+dokka = "1.8.20"
+kotlinx-kover = "0.7.6"
+ktlint = "1.0.0"
+spotless = "6.25.0"
+compose-rules-detekt = "0.3.0"
 
 junit = "4.13.2"
 kermit = "2.0.3"
@@ -98,6 +104,9 @@ androidx-room-compiler = { group = "androidx.room", name = "room-compiler", vers
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidxRoom" }
 sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
 
+compose-rules-detekt = { module = "io.nlopez.compose.rules:detekt", version.ref = "compose-rules-detekt" }
+
+
 kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
 junit = { module = "junit:junit", version.ref = "junit" }
 androidx-datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "datastore" }
@@ -119,7 +128,7 @@ kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref =
 kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
-build-config = { id = "com.codingfeline.buildkonfig:buildkonfig-gradle-plugin", version.ref = "build-konfig" }
+buildConfig = { id = "com.codingfeline.buildkonfig:buildkonfig-gradle-plugin", version.ref = "build-konfig" }
 
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
@@ -127,3 +136,6 @@ kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 skie = { id = "co.touchlab.skie", version.ref = "skie"}
 room = { id = "androidx.room", version.ref = "androidxRoom" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+gradle-spotless = { id = "com.diffplug.gradle.spotless", version.ref = "spotless" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+kotlinx-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kotlinx-kover" }

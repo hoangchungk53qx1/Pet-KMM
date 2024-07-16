@@ -1,9 +1,7 @@
 package com.vn.chungha.pet_kmm.android.presentation.main
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.EnterTransition
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -15,44 +13,43 @@ import com.vn.chungha.pet_kmm.android.presentation.home.PetHomeDestination
 
 @Composable
 fun PetCodeApp(
-    modifier: Modifier = Modifier,
-    startDestination: PetNavigationDestination = PetHomeDestination,
-    appState: PetCodeAppState = rememberPetAppState(),
+  modifier: Modifier = Modifier,
+  startDestination: PetNavigationDestination = PetHomeDestination,
+  appState: PetCodeAppState = rememberPetAppState(),
 ) {
-
-    PetAppBaseTheme {
-        Scaffold(
-            modifier = modifier,
-            bottomBar = {
-                AnimatedVisibility(
-                    visible = appState.shouldShowBottomBar,
-                ) {
-                    PetBottomBar(
-                        destinations = appState.topLevelDestinations,
-                        currentDestination = appState.currentTopLevelDestination,
-                        onNavigateToDestination = {
-                            appState.navigate(it)
-                        },
-                    )
-                }
+  PetAppBaseTheme {
+    Scaffold(
+      modifier = modifier,
+      bottomBar = {
+        AnimatedVisibility(
+          visible = appState.shouldShowBottomBar,
+        ) {
+          PetBottomBar(
+            destinations = appState.topLevelDestinations,
+            currentDestination = appState.currentTopLevelDestination,
+            onNavigateToDestination = {
+              appState.navigate(it)
             },
-            snackbarHost = {
-            },
-        ) { innerPadding ->
-            Box(
-                modifier = Modifier
-                    .padding(paddingValues = innerPadding)
-                    .consumeWindowInsets(paddingValues = innerPadding),
-            ) {
-                PetCodeNavHost(
-                    navController = appState.navController,
-                    startDestination = startDestination,
-                    onNavigateToDestination = appState::navigate,
-                    onNavigateToDestinationPopUpTo = appState::navigateWithPopUpTo,
-                    onBackClick = {},
-                    showBottomBar = {},
-                )
-            }
+          )
         }
+      },
+      snackbarHost = {
+      },
+    ) { innerPadding ->
+      Box(
+        modifier = Modifier
+          .padding(paddingValues = innerPadding)
+          .consumeWindowInsets(paddingValues = innerPadding),
+      ) {
+        PetCodeNavHost(
+          navController = appState.navController,
+          startDestination = startDestination,
+          onNavigateToDestination = appState::navigate,
+          onNavigateToDestinationPopUpTo = appState::navigateWithPopUpTo,
+          onBackClick = {},
+          showBottomBar = {},
+        )
+      }
     }
+  }
 }

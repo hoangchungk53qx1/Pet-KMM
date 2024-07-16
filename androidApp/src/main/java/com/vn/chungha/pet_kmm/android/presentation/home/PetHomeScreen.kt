@@ -4,19 +4,17 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.vn.chungha.pet_kmm.android.navigation.PetNavigationDestination
 
 @Composable
-internal fun PetHomeRoute(
-) {
-    PetHomeScreen(
-        modifier = Modifier
-    )
+internal fun PetHomeRoute() {
+  PetHomeScreen(
+    modifier = Modifier,
+  )
 }
 
 @Composable
 fun PetHomeScreen(modifier: Modifier) {
-    Box(modifier = modifier) {
-        Text(text = "Pet Home Screen")
-    }
+  Box(modifier = modifier) {
+    Text(text = "Pet Home Screen")
+  }
 }

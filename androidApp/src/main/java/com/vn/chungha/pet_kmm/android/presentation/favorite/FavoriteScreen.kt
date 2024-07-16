@@ -6,16 +6,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-internal fun FavoriteRoute(
-) {
-    FavoriteScreen(
-        modifier = Modifier
-    )
+internal fun FavoriteRoute() {
+  FavoriteScreen(
+    modifier = Modifier,
+  )
 }
 
 @Composable
 fun FavoriteScreen(modifier: Modifier) {
-    Box(modifier = modifier) {
-        Text(text = "Favorite Screen")
-    }
+  Box(modifier = modifier) {
+    Text(text = "Favorite Screen")
+  }
 }

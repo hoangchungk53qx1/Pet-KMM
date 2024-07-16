@@ -1,7 +1,7 @@
 package com.vn.chungha.pet_kmm.android.navigation
 
 /**
- * An interface for describing the QRCode navigation destinations.
+ * An interface for describing the Pet navigation destinations.
  */
 interface PetNavigationDestination {
   /**

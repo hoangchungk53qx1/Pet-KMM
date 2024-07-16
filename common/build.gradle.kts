@@ -5,6 +5,7 @@ plugins {
   alias(libs.plugins.ksp)
   alias(libs.plugins.skie)
   alias(libs.plugins.room)
+  alias(libs.plugins.kotlin.kapt)
 }
 
 kotlin {
@@ -64,7 +65,6 @@ kotlin {
 
       implementation(libs.koalaplot.core)
       implementation(libs.image.loader)
-
     }
 
     sourceSets.commonMain {
@@ -105,7 +105,7 @@ kotlin {
           "-Xexpect-actual-classes",
         )
     }
-    if (name != "kspCommonMainKotlinMetadata" ) {
+    if (name != "kspCommonMainKotlinMetadata") {
       dependsOn("kspCommonMainKotlinMetadata")
     }
   }

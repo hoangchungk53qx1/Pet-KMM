@@ -95,4 +95,3 @@ dependencies {
   androidTestImplementation(libs.androidx.compose.ui.test.junit)
   debugImplementation(libs.androidx.compose.ui.test.manifest)
 }
-

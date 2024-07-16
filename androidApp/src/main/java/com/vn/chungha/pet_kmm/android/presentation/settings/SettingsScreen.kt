@@ -6,16 +6,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-internal fun SettingRoute(
-) {
-    SettingScreen(
-        modifier = Modifier
-    )
+internal fun SettingRoute() {
+  SettingScreen(
+    modifier = Modifier,
+  )
 }
 
 @Composable
 fun SettingScreen(modifier: Modifier) {
-    Box(modifier = modifier) {
-        Text(text = "SettingScreen Screen")
-    }
+  Box(modifier = modifier) {
+    Text(text = "SettingScreen Screen")
+  }
 }
