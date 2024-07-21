@@ -20,7 +20,7 @@ kotlinxCollectionsImmutable = "0.3.7"
 
 koalaplot = "0.5.3"
 koin = "3.6.0-Beta4"
-koinCompose = "3.6.0-Beta4"
+koinCompose = "3.6.0-wasm-alpha2"
 koinComposeMultiplatform = "1.2.0-Beta4"
 ktor = "2.3.11"
 slf4j = "2.0.13"
