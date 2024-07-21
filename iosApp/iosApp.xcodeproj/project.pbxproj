@@ -13,6 +13,9 @@
 		2ED0C62DAD181D190D6EC398 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AE95183CA7FA444B504796 /* Pods_iosApp.framework */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		888A60642C4D1D3900A2496C /* ShareViewModelStoreOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A60632C4D1D3900A2496C /* ShareViewModelStoreOwner.swift */; };
+		888A60672C4D285F00A2496C /* HomePetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A60662C4D285F00A2496C /* HomePetView.swift */; };
+		888A606B2C4D28CE00A2496C /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A606A2C4D28CE00A2496C /* FavoriteView.swift */; };
+		888A606E2C4D2CCF00A2496C /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A606D2C4D2CCF00A2496C /* SettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		888A60632C4D1D3900A2496C /* ShareViewModelStoreOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewModelStoreOwner.swift; sourceTree = "<group>"; };
+		888A60662C4D285F00A2496C /* HomePetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePetView.swift; sourceTree = "<group>"; };
+		888A606A2C4D28CE00A2496C /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		888A606D2C4D2CCF00A2496C /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		96AE95183CA7FA444B504796 /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -78,6 +84,7 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				888A60652C4D283A00A2496C /* presentation */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
@@ -86,6 +93,40 @@
 				888A60632C4D1D3900A2496C /* ShareViewModelStoreOwner.swift */,
 			);
 			path = iosApp;
+			sourceTree = "<group>";
+		};
+		888A60652C4D283A00A2496C /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				888A606C2C4D28D300A2496C /* setting */,
+				888A60692C4D28B400A2496C /* favorite */,
+				888A60682C4D28A500A2496C /* home */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		888A60682C4D28A500A2496C /* home */ = {
+			isa = PBXGroup;
+			children = (
+				888A60662C4D285F00A2496C /* HomePetView.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		888A60692C4D28B400A2496C /* favorite */ = {
+			isa = PBXGroup;
+			children = (
+				888A606A2C4D28CE00A2496C /* FavoriteView.swift */,
+			);
+			path = favorite;
+			sourceTree = "<group>";
+		};
+		888A606C2C4D28D300A2496C /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				888A606D2C4D2CCF00A2496C /* SettingView.swift */,
+			);
+			path = setting;
 			sourceTree = "<group>";
 		};
 		AE02EDF93F9D2FA7EBA5CBD1 /* Frameworks */ = {
@@ -193,7 +234,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				888A60672C4D285F00A2496C /* HomePetView.swift in Sources */,
 				888A60642C4D1D3900A2496C /* ShareViewModelStoreOwner.swift in Sources */,
+				888A606E2C4D2CCF00A2496C /* SettingView.swift in Sources */,
+				888A606B2C4D28CE00A2496C /* FavoriteView.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

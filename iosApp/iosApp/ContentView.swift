@@ -2,14 +2,16 @@ import SwiftUI
 import common
 
 struct ContentView: View {
-	let greet = Greeting().greet()
-
-	let vm = SharedViewModelStoreOwner<HomePetViewModel>()
-
-     let ss = "Android is best in the world"
-	var body: some View {
-		Text(ss)
-	}
+    var body: some View {
+        TabView {
+            HomeView()
+                .tabItem { Label("Home", systemImage: "person") }
+            FavoriteView()
+                .tabItem { Label("Favorite", systemImage: "clock") }
+            SettingView()
+                .tabItem { Label("Setting", systemImage: "list.number") }
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
