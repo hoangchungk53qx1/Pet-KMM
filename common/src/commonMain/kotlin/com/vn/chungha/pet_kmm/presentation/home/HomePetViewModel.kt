@@ -12,7 +12,7 @@ open class HomePetViewModel(
 
     fun getPetList() {
         viewModelScope.launch {
-            homePetRepository.getPetCatByPage("breed:", 1, 10)
+            homePetRepository.getPetCatByPage("breed", 1, 10)
         }
     }
 
