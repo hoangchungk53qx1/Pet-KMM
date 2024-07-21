@@ -1,6 +1,6 @@
 package com.vn.chungha.pet_kmm.di
 
-import com.vn.chungha.pet_kmm.BuildKonfig
+import com.vn.chungha.pet_kmm.buildkonfig.BuildKonfig
 import com.vn.chungha.pet_kmm.data.PetHomeRepositoryIml
 import com.vn.chungha.pet_kmm.data.remote.PetApi
 import com.vn.chungha.pet_kmm.domain.PetCatRepository
