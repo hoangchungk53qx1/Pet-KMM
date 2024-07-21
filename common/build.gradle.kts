@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
+
 plugins {
   alias(libs.plugins.kotlinMultiplatform)
   alias(libs.plugins.kotlinCocoapods)
@@ -19,12 +22,25 @@ kotlin {
     }
   }
 
+  listOf(
+    iosX64(),
+    iosArm64(),
+    iosSimulatorArm64()
+  ).forEach {
+    it.binaries.framework {
+      export(libs.androidx.lifecycle.viewmodel)
+      baseName = "common"
+      isStatic = true
+    }
+  }
+
   androidTarget()
   jvm()
 
-  iosX64()
-  iosArm64()
-  iosSimulatorArm64()
+  @OptIn(ExperimentalKotlinGradlePluginApi::class)
+  compilerOptions {
+    languageVersion.set(KotlinVersion.KOTLIN_2_0)
+  }
 
   cocoapods {
     summary = "Some description for the Shared Module"
@@ -32,7 +48,9 @@ kotlin {
     version = "1.0"
     ios.deploymentTarget = "16.0"
     podfile = project.file("../iosApp/Podfile")
+
     framework {
+      export(libs.androidx.lifecycle.viewmodel)
       baseName = "common"
       isStatic = true
     }
