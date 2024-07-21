@@ -27,7 +27,7 @@ slf4j = "2.0.13"
 skie = "0.8.2"
 datastore = "1.1.1"
 androidxNavigationCompose = "2.8.0-beta05"
-androidxLifecycle = "2.8.2"
+androidxLifecycle = "2.8.3"
 
 
 androidxRoom = "2.7.0-alpha05"
