@@ -1,5 +1,7 @@
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
+import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.BOOLEAN
+import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
 
 plugins {
   alias(libs.plugins.kotlinMultiplatform)
@@ -9,6 +11,7 @@ plugins {
   alias(libs.plugins.skie)
   alias(libs.plugins.room)
   alias(libs.plugins.kotlin.kapt)
+  alias(libs.plugins.buildKonfig)
 }
 
 kotlin {
@@ -163,5 +166,22 @@ android {
 
   dependencies {
     coreLibraryDesugaring(libs.jdkDesugar)
+  }
+}
+
+buildkonfig {
+  packageName = "$group"
+  defaultConfigs {
+    buildConfigField(STRING, "VERSION_NAME", version.toString())
+    buildConfigField(BOOLEAN, "DEBUG", "false")
+  }
+
+  defaultConfigs("debug") {
+    buildConfigField(BOOLEAN, "DEBUG", "true")
+  }
+
+  targetConfigs {
+    android {
+    }
   }
 }

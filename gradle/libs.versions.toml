@@ -128,8 +128,6 @@ kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref =
 kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
-buildConfig = { id = "com.codingfeline.buildkonfig:buildkonfig-gradle-plugin", version.ref = "build-konfig" }
-
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
@@ -139,3 +137,4 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 gradle-spotless = { id = "com.diffplug.gradle.spotless", version.ref = "spotless" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlinx-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kotlinx-kover" }
+buildKonfig = { id = "com.codingfeline.buildkonfig", version = "0.15.1" }
