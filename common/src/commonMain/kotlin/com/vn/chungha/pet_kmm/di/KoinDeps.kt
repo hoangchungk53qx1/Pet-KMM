@@ -1,6 +1,8 @@
 package com.vn.chungha.pet_kmm.di
 
+import com.vn.chungha.pet_kmm.BuildKonfig
 import com.vn.chungha.pet_kmm.data.PetHomeRepositoryIml
+import com.vn.chungha.pet_kmm.data.remote.PetApi
 import com.vn.chungha.pet_kmm.domain.PetCatRepository
 import com.vn.chungha.pet_kmm.platformModule
 import io.ktor.client.HttpClient
@@ -15,9 +17,9 @@ import io.ktor.client.request.header
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import org.koin.core.context.startKoin
+import org.koin.core.qualifier.named
 import org.koin.dsl.KoinAppDeclaration
 import org.koin.dsl.module
-import `pet-kmm`.BuildKonfig
 
 fun initKoin(enableNetworkLogs: Boolean = false, appDeclaration: KoinAppDeclaration = {}) = startKoin {
   appDeclaration()
@@ -27,10 +29,13 @@ fun initKoin(enableNetworkLogs: Boolean = false, appDeclaration: KoinAppDeclarat
 // called by iOS etc
 fun initKoin() = initKoin(enableNetworkLogs = false) {}
 
+private fun getBaseUrlDomain() = BuildKonfig.API_DOMAIN
+
 fun commonModule(enableNetworkLogs: Boolean) = module {
+  factory(qualifier = named("baseUrl")) { getBaseUrlDomain() }
   single { createJson() }
   single { createHttpClient(get(), get(), enableNetworkLogs = enableNetworkLogs) }
-
+  single { PetApi(get(qualifier = named("baseUrl")), get())}
   single<PetCatRepository> { PetHomeRepositoryIml(get()) }
 }
 

@@ -140,7 +140,6 @@ skie {
 }
 
 dependencies {
-  implementation(project(":common"))
   add("kspCommonMainMetadata", libs.androidx.room.compiler)
 }
 
@@ -172,10 +171,11 @@ android {
 }
 
 buildkonfig {
-  packageName = "com.vn.chungha.pet_kmm"
+  packageName = "com.vn.chungha.pet_kmm.buildkonfig"
 
   defaultConfigs {
     buildConfigField(STRING, "VERSION_NAME", version.toString())
+    buildConfigField(STRING, "API_DOMAIN", "https://api.thecatapi.com/v1")
     buildConfigField(STRING, "API_KEY_DEMO", "bed9cfb9-fad4-41ae-bc4d-09cf7cb552bf")
     buildConfigField(BOOLEAN, "DEBUG", "false")
   }
