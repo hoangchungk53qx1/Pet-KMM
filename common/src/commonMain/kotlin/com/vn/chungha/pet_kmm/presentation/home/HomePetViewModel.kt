@@ -5,9 +5,10 @@ import org.koin.core.component.KoinComponent
 
 open class HomePetViewModel(
 //    private val homePetRepository: HomePetRepository
-) : ViewModel(), KoinComponent {
+) : ViewModel(),
+  KoinComponent {
 
-    companion object {
-        const val TAG = "HomePetViewModel"
-    }
+  companion object {
+    const val TAG = "HomePetViewModel"
+  }
 }

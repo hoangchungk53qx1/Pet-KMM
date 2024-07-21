@@ -1,7 +1,7 @@
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
-import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.BOOLEAN
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
   alias(libs.plugins.kotlinMultiplatform)
@@ -11,6 +11,7 @@ plugins {
   alias(libs.plugins.skie)
   alias(libs.plugins.room)
   alias(libs.plugins.kotlin.kapt)
+  alias(libs.plugins.kotlinx.serialization)
   alias(libs.plugins.buildKonfig)
 }
 
@@ -28,7 +29,7 @@ kotlin {
   listOf(
     iosX64(),
     iosArm64(),
-    iosSimulatorArm64()
+    iosSimulatorArm64(),
   ).forEach {
     it.binaries.framework {
       export(libs.androidx.lifecycle.viewmodel)
@@ -139,6 +140,7 @@ skie {
 }
 
 dependencies {
+  implementation(project(":common"))
   add("kspCommonMainMetadata", libs.androidx.room.compiler)
 }
 
@@ -170,9 +172,11 @@ android {
 }
 
 buildkonfig {
-  packageName = "$group"
+  packageName = "com.vn.chungha.pet_kmm"
+
   defaultConfigs {
     buildConfigField(STRING, "VERSION_NAME", version.toString())
+    buildConfigField(STRING, "API_KEY_DEMO", "bed9cfb9-fad4-41ae-bc4d-09cf7cb552bf")
     buildConfigField(BOOLEAN, "DEBUG", "false")
   }
 
