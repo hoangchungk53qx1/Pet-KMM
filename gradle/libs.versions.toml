@@ -65,8 +65,8 @@ androidx-compose-ui-test-junit = { group = "androidx.compose.ui", name = "ui-tes
 androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
-androidx-compose-material3-WindowSizeClass = { group = "androidx.compose.material3", name = "material3-window-size-class" }
+androidx-compose-material3 =  { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-material3-WindowSizeClass =  { group = "androidx.compose.material3", name="material3-window-size-class" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidxNavigationCompose" }
 androidx-lifecycle-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidxLifecycle" }
 androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "androidxLifecycle" }
@@ -115,9 +115,6 @@ immutable-collection = { module = "org.jetbrains.kotlinx:kotlinx-collections-imm
 
 jdkDesugar = { module = " com.android.tools:desugar_jdk_libs", version = "2.0.4" }
 
-napier = { module = "io.github.aakira:napier", version = "2.6.1" }
-
-atomic-fu = { module = "org.jetbrains.kotlinx:atomicfu", version = "0.24.0" }
 
 [bundles]
 ktor-common = ["ktor-client-core", "ktor-client-json", "ktor-client-logging", "ktor-client-serialization", "ktor-client-content-negotiation", "ktor-serialization-kotlinx-json"]
@@ -134,7 +131,7 @@ compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
-skie = { id = "co.touchlab.skie", version.ref = "skie" }
+skie = { id = "co.touchlab.skie", version.ref = "skie"}
 room = { id = "androidx.room", version.ref = "androidxRoom" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 gradle-spotless = { id = "com.diffplug.gradle.spotless", version.ref = "spotless" }

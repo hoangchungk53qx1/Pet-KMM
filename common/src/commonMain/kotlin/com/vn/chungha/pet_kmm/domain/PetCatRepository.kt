@@ -1,4 +1,4 @@
-package com.vn.chungha.pet_kmm.domain.repository
+package com.vn.chungha.pet_kmm.domain
 
 import com.vn.chungha.pet_kmm.data.remote.response.PetCatResponse
 
