@@ -1,5 +1,6 @@
 package com.vn.chungha.pet_kmm.data.remote.response
 
+import com.vn.chungha.pet_kmm.data.remote.CatImage
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -11,4 +12,5 @@ data class PetCatResponse(
   val origin: String,
   val life_span: String,
   val wikipedia_url: String,
+  val image : CatImage,
 )

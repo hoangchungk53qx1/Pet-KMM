@@ -1,3 +1,8 @@
+import co.touchlab.skie.configuration.DefaultArgumentInterop
+import co.touchlab.skie.configuration.EnumInterop
+import co.touchlab.skie.configuration.FlowInterop
+import co.touchlab.skie.configuration.SealedInterop
+import co.touchlab.skie.configuration.SuspendInterop
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.BOOLEAN
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
@@ -55,6 +60,8 @@ kotlin {
 
     framework {
       export(libs.androidx.lifecycle.viewmodel)
+      export(libs.kotlinx.coroutines)
+      export(libs.napier)
       baseName = "common"
       isStatic = true
     }
@@ -68,6 +75,7 @@ kotlin {
         optIn("kotlinx.cinterop.ExperimentalForeignApi")
       }
     }
+    
     commonMain.dependencies {
       implementation(libs.kotlinx.coroutines)
       implementation(libs.kotlinx.serialization)
@@ -87,6 +95,10 @@ kotlin {
 
       implementation(libs.koalaplot.core)
       implementation(libs.image.loader)
+
+      implementation(libs.napier)
+
+      api(libs.immutable.collection)
     }
 
     sourceSets.commonMain {
@@ -99,10 +111,14 @@ kotlin {
 
     androidMain.dependencies {
       implementation(libs.ktor.client.android)
+      implementation(libs.koin.core)
+      implementation(libs.koin.test)
     }
 
     iosMain.dependencies {
       implementation(libs.ktor.client.ios)
+      implementation(libs.koin.core)
+      implementation(libs.koin.test)
     }
 
     jvmMain.dependencies {
