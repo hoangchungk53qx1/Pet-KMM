@@ -28,7 +28,7 @@ skie = "0.8.3"
 skie-annotations = "0.8.3"
 datastore = "1.1.1"
 androidxNavigationCompose = "2.8.0-beta05"
-androidxLifecycle = "2.8.3"
+androidxLifecycle = "2.8.4"
 
 arrowCore = "1.2.0"
 
