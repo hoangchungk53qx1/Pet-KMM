@@ -8,14 +8,35 @@
 
 import Foundation
 import SwiftUI
+import common
+
+extension PetModel : Identifiable {
+    
+}
 
 struct HomeView : View {
+    
+    @ObservedObject
+    var viewModel: SwiftHomeViewModel = SwiftHomeViewModel()
+    
+    @StateObject var viewModelStoreOwner = SharedViewModelStoreOwner<HomePetViewModel>()
+    
     var body: some View {
         if #available(iOS 16.0, *) {
             NavigationStack {
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, content: {
-                    /*@START_MENU_TOKEN@*/Text("Placeholder")/*@END_MENU_TOKEN@*/
-                })
+                    
+                    Observing(viewModelStoreOwner.instance.statePetModel) { petList in
+                        PetCatItemsList(items: petList)
+                    }
+                    
+                    Text(viewModel.message)
+                }).task {
+                    
+                    
+                }
+            }.task {
+                await viewModel.activate()
             }
         }
     }

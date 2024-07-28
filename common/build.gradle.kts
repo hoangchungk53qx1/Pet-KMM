@@ -32,9 +32,9 @@ kotlin {
     iosSimulatorArm64(),
   ).forEach {
     it.binaries.framework {
-      export(libs.androidx.lifecycle.viewmodel)
+//      export(libs.androidx.lifecycle.viewmodel)
       baseName = "common"
-      isStatic = true
+//      isStatic = true
     }
   }
 
@@ -56,11 +56,12 @@ kotlin {
     framework {
       export(libs.androidx.lifecycle.viewmodel)
       baseName = "common"
-      isStatic = true
+//      isStatic = true
     }
   }
 
   sourceSets {
+    // put your Multiplatform dependencies here
     all {
       languageSettings.run {
         optIn("kotlinx.coroutines.FlowPreview")
@@ -69,6 +70,9 @@ kotlin {
       }
     }
     commonMain.dependencies {
+
+      implementation(libs.touchlab.skie.annotations)
+
       implementation(libs.kotlinx.coroutines)
       implementation(libs.kotlinx.serialization)
       api(libs.kotlinx.datetime)
@@ -87,6 +91,10 @@ kotlin {
 
       implementation(libs.koalaplot.core)
       implementation(libs.image.loader)
+
+      implementation(libs.immutable.collection)
+      implementation(libs.arrow.kt)
+
     }
 
     sourceSets.commonMain {
@@ -135,7 +143,8 @@ kotlin {
 
 skie {
   features {
-    enableSwiftUIObservingPreview = true
+    coroutinesInterop.set(true)
+    enableSwiftUIObservingPreview.set(true)
   }
 }
 

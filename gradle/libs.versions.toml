@@ -24,11 +24,13 @@ koinCompose = "3.6.0-Beta4"
 koinComposeMultiplatform = "1.2.0-Beta4"
 ktor = "2.3.11"
 slf4j = "2.0.13"
-skie = "0.8.2"
+skie = "0.8.3"
+skie-annotations = "0.8.3"
 datastore = "1.1.1"
 androidxNavigationCompose = "2.8.0-beta05"
 androidxLifecycle = "2.8.3"
 
+arrowCore = "1.2.0"
 
 androidxRoom = "2.7.0-alpha05"
 sqlite = "2.5.0-SNAPSHOT"
@@ -115,6 +117,12 @@ immutable-collection = { module = "org.jetbrains.kotlinx:kotlinx-collections-imm
 
 jdkDesugar = { module = " com.android.tools:desugar_jdk_libs", version = "2.0.4" }
 
+napier = { module = "io.github.aakira:napier", version = "2.6.1" }
+atomic-fu = { module = "org.jetbrains.kotlinx:atomicfu", version = "0.24.0" }
+
+touchlab-skie-annotations = { module = "co.touchlab.skie:configuration-annotations", version.ref = "skie-annotations" }
+
+arrow-kt = { module = "io.arrow-kt:arrow-core", version.ref = "arrowCore" }
 
 [bundles]
 ktor-common = ["ktor-client-core", "ktor-client-json", "ktor-client-logging", "ktor-client-serialization", "ktor-client-content-negotiation", "ktor-serialization-kotlinx-json"]
