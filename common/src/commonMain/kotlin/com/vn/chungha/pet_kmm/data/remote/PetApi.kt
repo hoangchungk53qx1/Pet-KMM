@@ -11,6 +11,6 @@ class PetApi(
   private val client: HttpClient,
 ) : KoinComponent {
 
-  suspend fun fetchPetHomeByBreedPage(page: Int, limit : Int) = client
+  suspend fun fetchPetHomeByBreedPage(page: Int, limit : Int): List<PetCatResponse> = client
     .get("$baseUrl/breeds?attach_breed=0&page=$page&limit=$limit").body<List<PetCatResponse>>()
 }

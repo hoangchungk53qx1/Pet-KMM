@@ -93,9 +93,11 @@ kotlin {
       implementation(libs.image.loader)
 
       implementation(libs.immutable.collection)
-      implementation(libs.arrow.kt)
 
-    }
+      implementation(libs.kotlin.result)
+      implementation(libs.kotlin.result.coroutines)
+
+  }
 
     sourceSets.commonMain {
       kotlin.srcDir("build/generated/ksp/metadata")

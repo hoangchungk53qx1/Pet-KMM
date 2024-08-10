@@ -6,6 +6,8 @@ import com.vn.chungha.pet_kmm.data.remote.PetApi
 import com.vn.chungha.pet_kmm.domain.PetCatRepository
 import com.vn.chungha.pet_kmm.platformModule
 import com.vn.chungha.pet_kmm.presentation.home.HomePetViewModel
+import com.vn.chungha.pet_kmm.utils.AppCoroutineDispatcherImpl
+import com.vn.chungha.pet_kmm.utils.AppCoroutineDispatchers
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.plugins.DefaultRequest
@@ -37,10 +39,11 @@ private fun getBaseUrlDomain() = BuildKonfig.API_DOMAIN
 fun commonModule(enableNetworkLogs: Boolean) = module {
   factory(qualifier = named("baseUrl")) { getBaseUrlDomain() }
   single { createJson() }
+  single<AppCoroutineDispatchers> { AppCoroutineDispatcherImpl() }
   single { createHttpClient(get(), get(), enableNetworkLogs = enableNetworkLogs) }
   single { PetApi(get(qualifier = named("baseUrl")), get()) }
-  single<PetCatRepository> { PetHomeRepositoryIml(get()) }
-//  viewModel { HomePetViewModel(get()) }
+  single<PetCatRepository> { PetHomeRepositoryIml(get(), get()) }
+  viewModel { HomePetViewModel() }
 }
 
 fun createJson() = Json {

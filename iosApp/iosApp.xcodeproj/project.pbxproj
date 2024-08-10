@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		888A60672C4D285F00A2496C /* HomePetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A60662C4D285F00A2496C /* HomePetView.swift */; };
 		888A606B2C4D28CE00A2496C /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A606A2C4D28CE00A2496C /* FavoriteView.swift */; };
 		888A606E2C4D2CCF00A2496C /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A606D2C4D2CCF00A2496C /* SettingView.swift */; };
+		88D4A2732C6754CB00917608 /* HomeViewModelSwiftUiWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D4A2722C6754CB00917608 /* HomeViewModelSwiftUiWrapper.swift */; };
 		88F381992C556EA200979D72 /* ShareSwiftUICode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F381982C556EA200979D72 /* ShareSwiftUICode.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		888A60662C4D285F00A2496C /* HomePetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePetView.swift; sourceTree = "<group>"; };
 		888A606A2C4D28CE00A2496C /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		888A606D2C4D2CCF00A2496C /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		88D4A2722C6754CB00917608 /* HomeViewModelSwiftUiWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelSwiftUiWrapper.swift; sourceTree = "<group>"; };
 		88F381982C556EA200979D72 /* ShareSwiftUICode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSwiftUICode.swift; sourceTree = "<group>"; };
 		96AE95183CA7FA444B504796 /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 				8869617E2C4FA7430007D47A /* PetCatItemsList.swift */,
 				886961802C4FA96C0007D47A /* PetCatItemRow.swift */,
 				88F381982C556EA200979D72 /* ShareSwiftUICode.swift */,
+				88D4A2722C6754CB00917608 /* HomeViewModelSwiftUiWrapper.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				88D4A2732C6754CB00917608 /* HomeViewModelSwiftUiWrapper.swift in Sources */,
 				88F381992C556EA200979D72 /* ShareSwiftUICode.swift in Sources */,
 				888A60672C4D285F00A2496C /* HomePetView.swift in Sources */,
 				888A60642C4D1D3900A2496C /* ShareViewModelStoreOwner.swift in Sources */,

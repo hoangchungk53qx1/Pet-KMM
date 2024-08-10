@@ -27,4 +27,8 @@ class SharedViewModelStoreOwner<VM : ViewModel> : ObservableObject, ViewModelSto
     deinit {
         viewModelStore.clear()
     }
+    
+    func onCleared() {
+        viewModelStore.clear()
+    }
 }

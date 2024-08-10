@@ -9,6 +9,8 @@ androidxComposeBom = "2024.06.00"
 
 
 build-konfig = "0.15.1"
+kotlinResult = "2.0.0"
+kotlinResultCoroutines = "2.0.0"
 ksp = "2.0.0-1.0.21"
 kotlinx-serialization = "1.7.0"
 
@@ -50,6 +52,8 @@ junit = "4.13.2"
 kermit = "2.0.3"
 
 [libraries]
+kotlin-result = { module = "com.michael-bull.kotlin-result:kotlin-result", version.ref = "kotlinResult" }
+kotlin-result-coroutines = { module = "com.michael-bull.kotlin-result:kotlin-result-coroutines", version.ref = "kotlinResultCoroutines" }
 kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinx-dateTime" }
 kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "kotlinx-serialization" }

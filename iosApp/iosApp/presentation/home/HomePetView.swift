@@ -30,10 +30,8 @@ struct HomeView : View {
                         PetCatItemsList(items: petList)
                     }
                     
-                    Text(viewModel.message)
                 }).task {
-                    
-                    
+                
                 }
             }.task {
                 await viewModel.activate()
