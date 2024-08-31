@@ -5,7 +5,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
             HomeView()
-                .tabItem { Label("Home111", systemImage: "person") }
+                .tabItem { Label("Home", systemImage: "person") }
             FavoriteView()
                 .tabItem { Label("Favorite", systemImage: "clock") }
             SettingView()
