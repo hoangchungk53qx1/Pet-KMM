@@ -16,18 +16,7 @@ struct PetCatItemsList : View {
     var body: some View {
         List {
             ForEach(items, id: \.id) { pet in
-                HStack(content: {
-                    AsyncImage(url: URL(string: pet.url)) { image in
-                                image.resizable()
-                                   .aspectRatio(contentMode: .fit)
-                                   .frame(width: 64, height: 64)
-                           } placeholder: {
-                               ProgressView()
-                           }
-                    Text(pet.name)
-                    Spacer()
-                    Text(pet.description_)
-                })
+                PetCatItemRow(items: pet)
             }
         }
     }

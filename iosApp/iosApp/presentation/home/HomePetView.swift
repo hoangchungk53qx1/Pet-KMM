@@ -21,20 +21,32 @@ struct HomeView : View {
     
     @StateObject var viewModelStoreOwner = SharedViewModelStoreOwner<HomePetViewModel>()
     
+    init() {
+        viewModelStoreOwner.instance.getPetFirstList()
+    }
+    
     var body: some View {
         if #available(iOS 16.0, *) {
             NavigationStack {
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, content: {
-                    
-                    Observing(viewModelStoreOwner.instance.statePetModel) { petList in
-                        PetCatItemsList(items: petList)
+                    Observing(viewModelStoreOwner.instance.statePetModel) { state in
+                        switch state {
+                        case _ as HomePetUiStateLoadingFirstPage:
+                            ProgressView()
+                        case let fristPageSuccess as HomePetUiStateLoadPageSuccess:
+                            PetCatItemsList(items: fristPageSuccess.petList)
+                            
+                            
+                        default:
+                            EmptyView()
+                        }
                     }
                     
                 }).task {
-                
+                    
                 }
             }.task {
-                await viewModel.activate()
+                //                await viewModelStoreOwner.instance.getPetFirstList()
             }
         }
     }

@@ -17,8 +17,8 @@ import com.vn.chungha.pet_kmm.android.presentation.main.PetCodeApp
 class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    WindowCompat.setDecorFitsSystemWindows(window, false)
-    enableEdgeToEdge()
+//    WindowCompat.setDecorFitsSystemWindows(window, false)
+//    enableEdgeToEdge()
     setContent {
       Surface(
         modifier = Modifier.fillMaxSize(),

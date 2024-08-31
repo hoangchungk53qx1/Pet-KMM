@@ -1,10 +1,9 @@
 package com.vn.chungha.pet_kmm.data.repository
 
-import androidx.compose.animation.core.rememberTransition
+import co.touchlab.kermit.Logger
 import com.github.michaelbull.result.coroutines.runSuspendCatching
 import com.github.michaelbull.result.Result
 import com.vn.chungha.pet_kmm.data.remote.PetApi
-import com.vn.chungha.pet_kmm.data.remote.response.PetCatResponse
 import com.vn.chungha.pet_kmm.domain.PetCatRepository
 import com.vn.chungha.pet_kmm.domain.mapper.toPetModel
 import com.vn.chungha.pet_kmm.domain.model.PetModel
@@ -24,6 +23,7 @@ class PetHomeRepositoryIml(
     return withContext(appCoroutineDispatchers.io) {
       runSuspendCatching {
         petApi.fetchPetHomeByBreedPage(page, perPage).map {
+          Logger.d { "getPetCatByPage success" }
           it.toPetModel()
         }
       }

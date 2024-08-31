@@ -15,6 +15,9 @@ class HomeViewModelSwiftUiWrapper : ObservableObject {
     var viewModelStoreOwner = SharedViewModelStoreOwner<HomePetViewModel>()
     
     var viewModel  : HomePetViewModel
+        
+    @Published
+    private(set) var petList =  []
     
     init() {
         let viewModel = viewModelStoreOwner.instance
@@ -22,7 +25,7 @@ class HomeViewModelSwiftUiWrapper : ObservableObject {
     }
     
     func getFirstPagePet() {
-        
+        viewModel.getPetFirstList()
     }
     
     func onCleared() {

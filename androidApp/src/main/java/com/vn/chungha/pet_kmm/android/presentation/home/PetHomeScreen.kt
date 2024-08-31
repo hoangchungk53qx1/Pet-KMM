@@ -8,6 +8,7 @@ import androidx.compose.runtime.State
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.vn.chungha.pet_kmm.domain.model.PetModel
+import com.vn.chungha.pet_kmm.presentation.home.HomePetUiState
 import com.vn.chungha.pet_kmm.presentation.home.HomePetViewModel
 import kotlinx.collections.immutable.toImmutableList
 import org.koin.androidx.compose.koinViewModel
@@ -16,15 +17,19 @@ import org.koin.androidx.compose.koinViewModel
 internal fun PetHomeRoute() {
     val playerListViewModel = koinViewModel<HomePetViewModel>()
 
-    val stateUiPetModel: State<List<PetModel>> =
+    val stateUiPetModel: State<HomePetUiState> =
         playerListViewModel.statePetModel.collectAsStateWithLifecycle()
 
     LaunchedEffect(Unit) {
-        playerListViewModel.getPetList()
+        playerListViewModel.getPetFirstList()
     }
     PetHomeScreen(
         modifier = Modifier,
-        items = stateUiPetModel.value
+        items = if (stateUiPetModel.value is HomePetUiState.LoadPageSuccess) {
+            (stateUiPetModel.value as HomePetUiState.LoadPageSuccess).petList
+        } else {
+            emptyList()
+        }
     )
 }
 
@@ -32,15 +37,11 @@ internal fun PetHomeRoute() {
 fun PetHomeScreen(modifier: Modifier,items : List<PetModel>) {
     val playerListViewModel = koinViewModel<HomePetViewModel>()
 
-    LaunchedEffect(Unit) {
-        playerListViewModel.getPetList()
-    }
-
     Box(modifier = modifier) {
         PetCatItemsList(
             items = items.toImmutableList(),
             isLoading = false,
-            onNextPage = { playerListViewModel.getPetList() },
+            onNextPage = { playerListViewModel.loadNextPage() },
             modifier = Modifier
         )
     }

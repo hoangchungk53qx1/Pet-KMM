@@ -31,9 +31,7 @@ fun PetCodeApp(
             PetBottomBar(
               destinations = appState.topLevelDestinations,
               currentDestination = appState.currentTopLevelDestination,
-              onNavigateToDestination = {
-                appState.navigate(it)
-              },
+              onNavigateToDestination = appState::navigate,
             )
 
             Box(
@@ -50,8 +48,8 @@ fun PetCodeApp(
     ) { innerPadding ->
       Box(
         modifier = Modifier
-          .padding(paddingValues = innerPadding)
-          .consumeWindowInsets(paddingValues = innerPadding),
+            .padding(paddingValues = innerPadding)
+            .consumeWindowInsets(paddingValues = innerPadding),
       ) {
         PetCodeNavHost(
           navController = appState.navController,

@@ -26,10 +26,7 @@ class SwiftHomeViewModel: ObservableObject {
     
     @MainActor
     func activate() async {
-        for await message in viewModel.messages {
-            self.message = message
-        }
-//        self.message =  viewModel.demo
+                
     }
 
     func deactivate() {

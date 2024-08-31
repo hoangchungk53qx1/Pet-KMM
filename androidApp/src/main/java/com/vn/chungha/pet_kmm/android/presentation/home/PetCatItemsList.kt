@@ -24,7 +24,6 @@ fun PetCatItemsList(
         verticalArrangement = Arrangement.spacedBy(16.dp),
         state = lazyListState,
     ) {
-
         items(items.size) { index ->
             val item = items[index]
             PetCatItemRow(
