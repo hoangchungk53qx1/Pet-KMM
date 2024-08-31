@@ -35,8 +35,8 @@ struct HomeView : View {
                             ProgressView()
                         case let fristPageSuccess as HomePetUiStateLoadPageSuccess:
                             PetCatItemsList(items: fristPageSuccess.petList)
-                            
-                            
+                        case let loadingNextPage as HomePetUiStateNextPageStateLoading:
+                            ProgressView()
                         default:
                             EmptyView()
                         }
