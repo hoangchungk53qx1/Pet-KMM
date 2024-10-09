@@ -16,7 +16,9 @@ struct PetCatItemsList : View {
     var body: some View {
         List {
             ForEach(items, id: \.id) { pet in
-                PetCatItemRow(items: pet)
+                NavigationLink(destination:  DetailPetView()) {
+                    PetCatItemRow(items: pet)
+                }
             }
         }
     }

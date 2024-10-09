@@ -41,10 +41,9 @@ struct HomeView : View {
                             EmptyView()
                         }
                     }
-                    
-                }).task {
-                    
-                }
+                
+                })
+             
             }.task {
                 //                await viewModelStoreOwner.instance.getPetFirstList()
             }
