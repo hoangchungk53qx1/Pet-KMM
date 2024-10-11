@@ -11,7 +11,7 @@ androidxComposeBom = "2024.06.00"
 build-konfig = "0.15.1"
 kotlinResult = "2.0.0"
 kotlinResultCoroutines = "2.0.0"
-ksp = "2.0.0-1.0.21"
+ksp = "2.0.21-1.0.25"
 kotlinx-serialization = "1.7.0"
 
 kotlinx-dateTime = "0.6.0"
