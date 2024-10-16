@@ -34,7 +34,7 @@ androidxLifecycle = "2.8.4"
 
 arrowCore = "1.2.0"
 
-androidxRoom = "2.7.0-alpha05"
+androidxRoom = "2.7.0-alpha10"
 sqlite = "2.5.0-SNAPSHOT"
 
 accompanist = "0.32.0"
